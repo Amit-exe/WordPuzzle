@@ -1,23 +1,27 @@
-import logo from './logo.svg';
 import './App.css';
+import Puzzle from './components/puzzle';
+import Rules from './components/rules';
+import Found from './components/foundwords';
+import Header from './components/header';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Header/>
+    <div className="App row row-no-gutters">
+      <div className='col-lg-3'>
+      <Rules/>
+      </div>
+      <div className='col-lg-5'>
+      <Puzzle/>
+      </div>
+      <div className='col-lg-3'>
+      <Found/>
+      </div>
+
+      </div>
+
+       
     </div>
   );
 }
