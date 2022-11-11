@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 // import wordsList from "../wordlist";
-import wordsList from "../list4";
+import wordsList from "../list";
 import correct from "./sound/correct.mp3"
 import error from "./sound/error.mp3"
 import already from "./sound/already.mp3"
@@ -56,6 +56,9 @@ function Puzzle() {
     function reset() {
         setScore(0);
         document.querySelector(".message").textContent = "";
+        while(found_words.length > 0) {
+            found_words.pop();
+        }
        
     }
     

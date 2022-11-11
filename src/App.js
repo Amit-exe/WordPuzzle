@@ -1,7 +1,7 @@
 import './App.css';
 import Puzzle from './components/puzzle';
 import Rules from './components/rules';
-import Found from './components/foundwords';
+import RightSide from './components/right';
 import Header from './components/header';
 
 function App() {
@@ -16,7 +16,7 @@ function App() {
       <Puzzle/>
       </div>
       <div className='col-lg-3'>
-      <Found/>
+      <RightSide/>
       </div>
 
       </div>
