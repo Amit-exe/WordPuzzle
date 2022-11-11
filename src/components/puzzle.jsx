@@ -6,20 +6,15 @@ import error from "./sound/error.mp3"
 import already from "./sound/already.mp3"
 
 
-
-
 const found_words = [];
 var corrects = new Audio(correct);
 var errors = new Audio(error);
 var alreadys = new Audio(already);
 
 
-
 function Puzzle() {
 
     const [score, setScore] = useState(0);
-
-   
 
     function check() {
 

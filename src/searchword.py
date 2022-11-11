@@ -1,6 +1,5 @@
 import nltk
 
-
 #downloading words corpus
 nltk.download("words")
 
@@ -22,7 +21,9 @@ for word in total_words_found:
 for word in total_words_found:
   if word[-1] == "s":
     total_words_found.remove(word)
- 
+
+
+#for saving all words in javascript file 
 with open("src/list.js","w") as file:
   file.write("const wordList = [")
   for i in total_words_found:
