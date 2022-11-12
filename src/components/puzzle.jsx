@@ -15,11 +15,20 @@ var alreadys = new Audio(already);
 function Puzzle() {
 
     const [score, setScore] = useState(0);
+    const [streak, setStreak] = useState(0);
+
 
     function check() {
 
         let message = document.querySelector(".message");
         let user_input = document.getElementById("user-input").value;
+        
+        message.classList.add("shakemessage");
+        setTimeout(() => { message.classList.remove("shakemessage") }, 1000);
+
+        if (streak === 0) {
+            document.querySelector(".streak").classList.add("hidden");
+        }
         
         
         user_input = user_input.toLowerCase();
@@ -27,22 +36,44 @@ function Puzzle() {
             
             if (!found_words.includes(user_input))
             {
-                found_words.push(user_input);
                 corrects.play();
+                found_words.push(user_input);
                 message.textContent = "  Nice Guess";
                 setScore(score + user_input.length);
+                setStreak(streak+1)
+
+                if (document.querySelector("main").classList.contains("greenb")) {
+                    document.querySelector("main").classList.remove("greenb")
+                }
+                if (document.querySelector("main").classList.contains("redb")) {
+                    document.querySelector("main").classList.remove("redb")
+                }
+
+                if (streak !== 0) {
+                    document.querySelector(".streak").classList.remove("hidden");
+                }
+            
             }
             else {
-                message.textContent = " Already Found";
                 alreadys.play();
+                message.textContent = " Already Found";
+                document.querySelector("main").classList.add("greenb")
+                setStreak(0)
+
             }
                   
     }
         else {
-              
+            errors.play();
             setScore(score - 1);
             message.textContent = "   Wrong word";
-            errors.play();
+            setStreak(0)
+
+
+            if (document.querySelector("main").classList.contains("greenb")) {
+                document.querySelector("main").classList.remove("greenb")
+            }
+            document.querySelector("main").classList.add("redb")
             
         }
     }
@@ -50,6 +81,10 @@ function Puzzle() {
 
     function reset() {
         setScore(0);
+        setStreak(0);
+        if (!document.querySelector(".streak").classList.contains("hidden")){
+            document.querySelector(".streak").classList.add("hidden");   
+        }
         document.querySelector(".message").textContent = "";
         while(found_words.length > 0) {
             found_words.pop();
@@ -65,6 +100,12 @@ function Puzzle() {
                 <div className="col-lg-8 scorelabel"><p>Score </p></div>
                 <div className="col-lg-4">
                 <p id="score"> {score}</p>
+                </div>
+                </div>
+                <div className="row score streak hidden">
+                <div className="col-lg-6 scorelabel streakl"><p>Streak </p></div>
+                <div className="col-lg-6">
+                <p id="score">{streak}🔥</p>
                 </div>
             </div>
             </section>

@@ -84,12 +84,17 @@ main {
 }
 
 .score {
-  font-size: 5rem;
+  font-size: 3.3rem;
   font-weight: 300;
   color: #001253;
   position: absolute;
-  right: 20px;
+  top:10px;
+  right: 60px;
   margin-bottom: auto;
+}
+.streak{
+  top:55px;
+  right: 5px;;
 }
 
 .player--active {
@@ -233,5 +238,15 @@ main {
 }
 
 
+.redb{
+  background-color: #fe3b3b66;
+}
+
+.greenb{
+  background-color: #FCE70066;
+}
 
 
+.hidden{
+  display: none;
+}

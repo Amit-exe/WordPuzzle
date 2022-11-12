@@ -14,9 +14,12 @@ function Rules() {
             <li>
                 Words should be 3,4 and 5 letters
             </li>
+            <li>Word must contain atleast one vowel</li>
             <li>
                 Repetation of letters is not allowed in same word
             </li>
+            <li>No proper names are allowed</li>
+
             <li>
                 Prurals not allowed
             </li>
