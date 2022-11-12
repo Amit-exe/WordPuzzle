@@ -23,7 +23,18 @@ for word in total_words_found:
     total_words_found.remove(word)
 
 
+#removing words which doesn't contain vowels
+for word in total_words_found:
+  no_vowels = True
+  if "a" in word or "e" in word or 'i' in word or 'o' in word or 'u' in word:
+    no_vowels =False
+
+  if no_vowels==True:
+    total_words_found.remove(word)
+
+
 #for saving all words in javascript file 
+
 with open("src/list.js","w") as file:
   file.write("const wordList = [")
   for i in total_words_found:
