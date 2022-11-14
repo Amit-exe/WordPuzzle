@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/WordPuzzle/static/css/main.8e3d2166.css",
+    "main.js": "/WordPuzzle/static/js/main.1d91360c.js",
+    "static/media/error.mp3": "/WordPuzzle/static/media/error.4b48c1faad572cf8f098.mp3",
+    "static/media/already.mp3": "/WordPuzzle/static/media/already.f93fca9d4dc51ee171e2.mp3",
+    "static/media/correct.mp3": "/WordPuzzle/static/media/correct.ed3894f877249fd39ddf.mp3",
+    "index.html": "/WordPuzzle/index.html",
+    "main.8e3d2166.css.map": "/WordPuzzle/static/css/main.8e3d2166.css.map",
+    "main.1d91360c.js.map": "/WordPuzzle/static/js/main.1d91360c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8e3d2166.css",
+    "static/js/main.1d91360c.js"
+  ]
+}
